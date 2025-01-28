@@ -1,5 +1,6 @@
 import mysql from "mysql2";
 
+
 // 데이터베이서 연결
 const connection = mysql.createConnection({
   host: "localhost",
