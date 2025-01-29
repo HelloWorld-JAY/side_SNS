@@ -1,18 +1,29 @@
 import { PiArrowBendDownRightBold } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import { useState } from "react";
 import { login } from "../api/auth";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [id, setId] = useState<string>("");
   const [pass, setPass] = useState<string>("");
 
   const handlerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await login(id, pass);
-    } catch (error) {}
+      const response = await login(id, pass);
+      if (response.data.success) {
+        navigate("/main");
+      } else {
+        alert("아이디 또는 비밀번호 입력 오류입니다.");
+        setId("");
+        setPass("");
+      }
+    } catch (error: any) {
+      alert(error.response.data.message);
+    }
   };
 
   return (
