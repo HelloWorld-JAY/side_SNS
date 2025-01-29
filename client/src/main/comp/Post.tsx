@@ -3,13 +3,18 @@
 const Post = () =>{
 
     return( 
-    <div>
-        <div>
-            <div>이름</div>
-            <div>내용</div>
+    
+        <div className="postContainer">
+            <div className="postCard">
+            <span className="username">r가나다라</span>
+            <hr/>
+            <p className="postContent">내용</p>
+            </div>
+            
+            
         </div>
         
-    </div>
+   
     )
 }
 

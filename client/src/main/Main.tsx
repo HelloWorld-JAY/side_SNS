@@ -5,6 +5,7 @@ import "./Main.scss";
 
 const Main = () => {
   return (
+    <div className="body">
     <div className="container">
       <div className="containerLeft">
         <div className="contianerUp">
@@ -17,6 +18,7 @@ const Main = () => {
       <div className="containerRight">
         <List></List>
       </div>
+    </div>
     </div>
   );
 };
